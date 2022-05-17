@@ -4,8 +4,9 @@ import ReactMarkdown from 'react-markdown';
 function App() {
    const [markdown, setMarkdown] = useState('## markdown preview');
    return (
+      //  npm install react-markdown
       <main>
-         <section className="markdownn">
+         <section className="markdown">
             {/* inside the textarea is displaying the useState which is the markdown */}
             <textarea
                className="input"
@@ -13,10 +14,12 @@ function App() {
                cols="30"
                rows="10"
                //  as we type we want to setMarkdown
-               onChange={() => setMarkdown(e.target.value)}
+               onChange={(e) => setMarkdown(e.target.value)}
             ></textarea>
             {/* part where we convert markdown  */}
-            <article className="result">{markdown}</article>
+            <article className="result">
+               <ReactMarkdown>{markdown}</ReactMarkdown>
+            </article>
          </section>
       </main>
    );
